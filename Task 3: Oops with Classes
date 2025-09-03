@@ -1,0 +1,72 @@
+class Vehicle {
+    String brand;
+
+    Vehicle(String brand) {
+        this.brand = brand;
+    }
+
+    void start() {
+        System.out.println("The vehicle is starting...");
+    }
+
+    void stop() {
+        System.out.println("The vehicle has stopped.");
+    }
+}
+
+class Car extends Vehicle {
+    Car(String brand) {
+        super(brand);
+    }
+
+    @Override
+    void start() {
+        System.out.println(brand + " Car is starting with a key ignition.");
+    }
+}
+
+class Bike extends Vehicle {
+    Bike(String brand) {
+        super(brand);
+    }
+
+    @Override
+    void start() {
+        System.out.println(brand + " Bike is starting with a self-start button.");
+    }
+}
+
+class Truck extends Vehicle {
+    Truck(String brand) {
+        super(brand);
+    }
+
+    @Override
+    void start() {
+        System.out.println(brand + " Truck is starting with heavy engine sound.");
+    }
+}
+
+public class OOPExample {
+    public static void main(String[] args) {
+        Vehicle myVehicle = new Vehicle("Generic");
+        Car myCar = new Car("Toyota");
+        Bike myBike = new Bike("Honda");
+        Truck myTruck = new Truck("Volvo");
+
+        myVehicle.start();
+        myCar.start();
+        myBike.start();
+        myTruck.start();
+
+        System.out.println();
+
+        Vehicle v1 = new Car("Hyundai");
+        Vehicle v2 = new Bike("Yamaha");
+        Vehicle v3 = new Truck("Tata");
+
+        v1.start();
+        v2.start();
+        v3.start();
+    }
+}
